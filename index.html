@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MR Sonho Doce — Confeitaria Artesanal | Ilha do Governador, RJ</title>
+<meta name="description" content="MR Sonho Doce — confeitaria artesanal na Ilha do Governador, RJ. Brigadeiros, docinhos gourmet, kits, doces personalizados e lembrancinhas feitos com carinho.">
+
+<!-- =========================================================
+     CONFIGURAÇÕES RÁPIDAS — edite aqui quando tiver os dados reais
+     1) Número de WhatsApp (linha ~34 do <script> no final do arquivo)
+     2) Link do Instagram (mesmo local)
+     3) Fotos: procure o comentário "FOTO:" em cada bloco <div class="ph">
+        e troque o <div> por <img src="sua-foto.jpg" alt="...">
+     4) Preços: dentro de cada card de produto há um comentário indicando
+        onde inserir o preço, caso deseje adicionar futuramente
+     ========================================================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@300;400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --choc:#4A2418;
+    --choc-dark:#2B1711;
+    --cream:#F8F1E7;
+    --beige:#E8D4BC;
+    --gold:#C6A15B;
+    --gold-light:#DEC08A;
+    --gold-deep:#9C7A3F;
+    --rose:#D9A0A0;
+    --rose-deep:#B96B6B;
+    --wine:#6E2A34;
+    --white:#FFFFFF;
+    --ink:#3A2317;
+    --ink-soft:#6b5142;
+    --radius:22px;
+    --radius-sm:12px;
+    --shadow-soft:0 18px 40px -20px rgba(43,23,17,0.35);
+    --shadow-hover:0 24px 50px -18px rgba(43,23,17,0.45);
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+
+  /* ---------- decorative sprinkle / granulado pattern ---------- */
+  .pattern-sprinkles{
+    position:absolute; inset:0;
+    pointer-events:none;
+    opacity:.5;
+    background-image:
+      radial-gradient(circle, rgba(198,161,91,.5) 1.6px, transparent 1.8px),
+      radial-gradient(circle, rgba(110,42,52,.35) 1.4px, transparent 1.6px),
+      radial-gradient(circle, rgba(74,36,24,.3) 1.4px, transparent 1.6px);
+    background-size: 90px 90px, 130px 130px, 70px 70px;
+    background-position: 0 0, 30px 60px, 60px 10px;
+  }
+  .pattern-sprinkles.on-dark{
+    opacity:.35;
+    background-image:
+      radial-gradient(circle, rgba(222,192,138,.55) 1.6px, transparent 1.8px),
+      radial-gradient(circle, rgba(217,160,160,.4) 1.4px, transparent 1.6px),
+      radial-gradient(circle, rgba(248,241,231,.25) 1.4px, transparent 1.6px);
+    background-size: 90px 90px, 130px 130px, 70px 70px;
+    background-position: 0 0, 30px 60px, 60px 10px;
+  }
+
+  /* ---------- section wave dividers ---------- */
+  .wave-divider{
+    position:absolute;
+    left:0; right:0;
+    width:100%;
+    height:70px;
+    line-height:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:2;
+  }
+  .wave-divider svg{width:100%; height:100%; display:block;}
+  .wave-divider.top{top:-1px;}
+  .wave-divider.bottom{bottom:-1px; transform:scaleY(-1);}
+
+  /* ---------- ornamental title flourish ---------- */
+  .flourish{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:14px 0 22px;
+  }
+  .flourish::before, .flourish::after{
+    content:'';
+    height:1px;
+    width:36px;
+    background:linear-gradient(90deg, transparent, var(--gold));
+  }
+  .flourish::after{background:linear-gradient(90deg, var(--gold), transparent);}
+  .flourish span{
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--gold);
+    flex-shrink:0;
+  }
+  .section-head.center .flourish{justify-content:center;}
+  .dark-section .flourish::before{background:linear-gradient(90deg, transparent, var(--gold-light));}
+  .dark-section .flourish::after{background:linear-gradient(90deg, var(--gold-light), transparent);}
+  .dark-section .flourish span{background:var(--gold-light);}
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  body{
+    font-family:'Work Sans', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    color:var(--choc-dark);
+    line-height:1.15;
+    letter-spacing:-0.01em;
+  }
+
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  button{font-family:inherit; cursor:pointer; border:none; background:none;}
+  ul{list-style:none;}
+
+  :focus-visible{
+    outline:2.5px solid var(--gold);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  .container{
+    width:100%;
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  .eyebrow{
+    font-family:'Caveat', cursive;
+    font-size:1.55rem;
+    color:var(--gold);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:6px;
+  }
+  .eyebrow svg{width:20px;height:20px;flex-shrink:0;}
+
+  .section-title{
+    font-size:clamp(2rem, 4vw, 2.9rem);
+    margin-bottom:16px;
+  }
+  .section-sub{
+    max-width:560px;
+    color:var(--ink-soft);
+    font-size:1.05rem;
+  }
+  .section-head{
+    margin-bottom:52px;
+  }
+  .section-head.center{
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .section-head.center .section-sub{margin-left:auto;margin-right:auto;}
+
+  section{
+    padding:110px 0;
+    position:relative;
+  }
+  @media (max-width:720px){
+    section{padding:76px 0;}
+  }
+
+  .dark-section{
+    background:var(--choc-dark);
+    color:var(--beige);
+  }
+  .dark-section h2, .dark-section h3, .dark-section h4{color:var(--cream);}
+  .dark-section .section-sub{color:#c9b3a1;}
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(26px);
+    transition:opacity .8s var(--ease), transform .8s var(--ease);
+  }
+  .reveal.is-visible{opacity:1; transform:translateY(0);}
+  .reveal-stagger > * {transition-delay:calc(var(--i,0) * 90ms);}
+
+  /* ---------- swirl signature icon ---------- */
+  .swirl{display:block;}
+
+  /* =========================================================
+     HEADER
+     ========================================================= */
+  .site-header{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:100;
+    padding:18px 0;
+    transition:background .4s var(--ease), padding .4s var(--ease), box-shadow .4s var(--ease);
+  }
+  .site-header .container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .site-header.scrolled{
+    background:rgba(248,241,231,0.92);
+    backdrop-filter:blur(10px);
+    padding:12px 0;
+    box-shadow:0 8px 24px -12px rgba(43,23,17,.18);
+  }
+
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .brand-badge{
+    width:46px; height:46px;
+    border-radius:50%;
+    background:radial-gradient(circle at 32% 28%, var(--gold-light), var(--gold) 60%, #a9834a 100%);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:1.15rem;
+    color:var(--choc-dark);
+    box-shadow:0 6px 14px -6px rgba(198,161,91,.7), inset 0 0 0 2px rgba(255,255,255,.35);
+    flex-shrink:0;
+  }
+  .brand-name{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.18rem;
+    color:var(--choc-dark);
+    letter-spacing:0.01em;
+  }
+  .brand-name span{
+    display:block;
+    font-family:'Caveat', cursive;
+    font-weight:500;
+    font-size:0.82rem;
+    color:var(--gold);
+    letter-spacing:0.02em;
+    margin-top:-2px;
+  }
+
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:34px;
+  }
+  .nav-links a{
+    font-size:0.93rem;
+    font-weight:500;
+    color:var(--choc-dark);
+    position:relative;
+    padding:4px 0;
+  }
+  .nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0; bottom:0;
+    width:0%; height:1.5px;
+    background:var(--gold);
+    transition:width .35s var(--ease);
+  }
+  .nav-links a:hover::after{width:100%;}
+
+  .header-cta{
+    display:flex;
+    align-items:center;
+    gap:18px;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    padding:14px 30px;
+    border-radius:100px;
+    font-size:0.93rem;
+    font-weight:600;
+    letter-spacing:0.01em;
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .35s var(--ease);
+    white-space:nowrap;
+  }
+  .btn svg{width:17px;height:17px;flex-shrink:0;}
+  .btn-primary{
+    background:linear-gradient(135deg, var(--gold-light), var(--gold));
+    color:var(--choc-dark);
+    box-shadow:0 10px 24px -10px rgba(198,161,91,.7);
+  }
+  .btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 16px 30px -10px rgba(198,161,91,.85);
+  }
+  .btn-ghost{
+    background:transparent;
+    color:var(--choc-dark);
+    border:1.5px solid rgba(74,36,24,.3);
+  }
+  .btn-ghost:hover{
+    border-color:var(--choc-dark);
+    background:rgba(74,36,24,.05);
+    transform:translateY(-2px);
+  }
+  .btn-ghost-light{
+    background:transparent;
+    color:var(--cream);
+    border:1.5px solid rgba(248,241,231,.4);
+  }
+  .btn-ghost-light:hover{
+    border-color:var(--gold-light);
+    background:rgba(198,161,91,.12);
+    transform:translateY(-2px);
+  }
+  .btn-block{width:100%;}
+  .btn-sm{padding:10px 20px; font-size:0.85rem;}
+
+  .menu-toggle{
+    display:none;
+    width:42px; height:42px;
+    border-radius:50%;
+    align-items:center;
+    justify-content:center;
+    background:rgba(74,36,24,.06);
+  }
+  .menu-toggle svg{width:20px;height:20px;}
+
+  @media (max-width:900px){
+    .nav-links{
+      position:fixed;
+      top:0; right:0;
+      height:100vh;
+      width:min(320px, 78vw);
+      background:var(--cream);
+      flex-direction:column;
+      align-items:flex-start;
+      justify-content:center;
+      gap:26px;
+      padding:40px;
+      transform:translateX(100%);
+      transition:transform .5s var(--ease);
+      box-shadow:-18px 0 40px -20px rgba(43,23,17,.35);
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-links a{font-size:1.15rem;}
+    .header-cta .btn-primary{display:none;}
+    .menu-toggle{display:flex;}
+  }
+
+  /* =========================================================
+     HERO
+     ========================================================= */
+  .hero{
+    padding:168px 0 110px;
+    position:relative;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse 900px 500px at 82% -8%, rgba(198,161,91,.22), transparent 60%),
+      radial-gradient(ellipse 700px 500px at -8% 20%, rgba(74,36,24,.08), transparent 60%),
+      var(--cream);
+  }
+  .hero .container{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:60px;
+    align-items:center;
+  }
+  .hero-eyebrow{
+    font-family:'Caveat', cursive;
+    font-size:1.7rem;
+    color:var(--gold);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:10px;
+  }
+  .hero h1{
+    font-size:clamp(2.7rem, 5.5vw, 4.4rem);
+    margin-bottom:18px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--gold);
+    position:relative;
+  }
+  .hero p.lead{
+    font-size:1.12rem;
+    color:var(--ink-soft);
+    max-width:460px;
+    margin-bottom:36px;
+  }
+  .hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+    margin-bottom:44px;
+  }
+  .hero-stats{
+    display:flex;
+    gap:36px;
+  }
+  .hero-stats div strong{
+    display:block;
+    font-family:'Fraunces', serif;
+    font-size:1.5rem;
+    color:var(--choc-dark);
+  }
+  .hero-stats div span{
+    font-size:0.82rem;
+    color:var(--ink-soft);
+  }
+
+  .hero-visual{
+    position:relative;
+  }
+  .hero-frame{
+    position:relative;
+    border-radius:32px;
+    overflow:hidden;
+    box-shadow:var(--shadow-soft);
+    aspect-ratio:4/5;
+  }
+  .hero-badge-float{
+    position:absolute;
+    bottom:-24px;
+    left:-24px;
+    background:var(--cream);
+    border-radius:20px;
+    padding:18px 22px;
+    box-shadow:0 20px 40px -18px rgba(43,23,17,.4);
+    display:flex;
+    align-items:center;
+    gap:12px;
+    max-width:230px;
+  }
+  .hero-badge-float .brand-badge{width:40px;height:40px;font-size:1rem;}
+  .hero-badge-float p{font-size:0.8rem; color:var(--ink-soft); line-height:1.35;}
+  .hero-badge-float p b{color:var(--choc-dark); font-family:'Fraunces',serif; display:block; font-size:0.92rem;}
+
+  @media (max-width:900px){
+    .hero .container{grid-template-columns:1fr; text-align:left;}
+    .hero{padding:136px 0 80px;}
+    .hero-badge-float{display:none;}
+  }
+
+  /* ---------- placeholder photo blocks ---------- */
+  .ph{
+    position:relative;
+    width:100%; height:100%;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:10px;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(198,161,91,.35), transparent 55%),
+      linear-gradient(150deg, var(--choc) 0%, var(--choc-dark) 100%);
+    border:1.5px dashed rgba(222,192,138,.55);
+    color:var(--gold-light);
+    text-align:center;
+    padding:20px;
+    border-radius:inherit;
+  }
+  .ph svg{width:34px;height:34px;opacity:.85;}
+  .ph small{
+    font-size:0.72rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:rgba(248,241,231,.65);
+    max-width:180px;
+  }
+  .ph.light{
+    background:
+      radial-gradient(circle at 30% 20%, rgba(198,161,91,.18), transparent 55%),
+      linear-gradient(150deg, var(--beige) 0%, #d9c1a0 100%);
+    border-color:rgba(74,36,24,.25);
+    color:var(--choc);
+  }
+  .ph.light small{color:rgba(74,36,24,.55);}
+
+  /* real photos */
+  .photo-fill{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+    border-radius:inherit;
+  }
+  .brand-badge img{
+    width:100%; height:100%;
+    object-fit:cover;
+    border-radius:50%;
+  }
+
+  /* =========================================================
+     SOBRE
+     ========================================================= */
+  .about .container{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:70px;
+    align-items:center;
+  }
+  .about-visual{
+    border-radius:var(--radius);
+    overflow:hidden;
+    aspect-ratio:1/1.05;
+    box-shadow:var(--shadow-soft);
+    position:relative;
+  }
+  .about-visual::after{
+    content:'';
+    position:absolute; inset:14px;
+    border:1.5px solid rgba(198,161,91,.55);
+    border-radius:14px;
+    pointer-events:none;
+  }
+  .about-text p{
+    color:var(--ink-soft);
+    font-size:1.08rem;
+    max-width:480px;
+    margin-bottom:30px;
+  }
+  .about-quote{
+    font-family:'Caveat', cursive;
+    font-size:1.6rem;
+    color:var(--choc);
+    border-left:3px solid var(--gold);
+    padding-left:18px;
+    max-width:420px;
+  }
+  @media (max-width:900px){
+    .about .container{grid-template-columns:1fr; gap:40px;}
+    .about-visual{order:-1; aspect-ratio:4/3;}
+  }
+
+  /* =========================================================
+     PRODUTOS
+     ========================================================= */
+  .products-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:30px;
+  }
+  @media (max-width:980px){.products-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:620px){.products-grid{grid-template-columns:1fr;}}
+
+  .card{
+    background:var(--white);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:0 10px 26px -18px rgba(43,23,17,.3);
+    transition:transform .45s var(--ease), box-shadow .45s var(--ease);
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    border:1px solid rgba(198,161,91,.18);
+  }
+  .card::after{
+    content:'';
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:4px;
+    background:linear-gradient(90deg, var(--gold), var(--rose-deep), var(--gold-deep));
+    opacity:0;
+    transition:opacity .4s var(--ease);
+  }
+  .card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-hover);
+  }
+  .card:hover::after{opacity:1;}
+  .card-media{
+    aspect-ratio:4/3.1;
+    position:relative;
+  }
+  .card-media::after{
+    content:'';
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, transparent 60%, rgba(43,23,17,.32));
+  }
+  .card-ribbon{
+    position:absolute;
+    top:14px; left:14px;
+    z-index:3;
+    background:linear-gradient(135deg, var(--gold-light), var(--gold));
+    color:var(--choc-dark);
+    font-size:0.7rem;
+    font-weight:700;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    padding:6px 14px;
+    border-radius:100px;
+    box-shadow:0 6px 14px -6px rgba(43,23,17,.4);
+  }
+  .card-ribbon.rose{background:linear-gradient(135deg, var(--rose), var(--rose-deep)); color:var(--white);}
+  .card-body{
+    padding:24px 24px 26px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    flex:1;
+  }
+  .card-body h3{font-size:1.22rem;}
+  .card-body p{
+    color:var(--ink-soft);
+    font-size:0.93rem;
+    flex:1;
+  }
+  .card-price{
+    font-size:0.8rem;
+    color:var(--gold);
+    font-weight:600;
+    letter-spacing:0.02em;
+  }
+  /* Para adicionar preço no futuro: insira <span class="card-price">R$ 00,00</span> dentro do .card-body */
+
+  /* =========================================================
+     GALERIA (mosaico)
+     ========================================================= */
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    grid-auto-rows:160px;
+    gap:16px;
+  }
+  .gallery-grid .g-item{
+    border-radius:16px;
+    overflow:hidden;
+    cursor:pointer;
+    position:relative;
+  }
+  .gallery-grid .g-item .ph{border-radius:16px;}
+  .gallery-grid .g-item::before{
+    content:'';
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, transparent 55%, rgba(0,0,0,.35));
+    opacity:0;
+    transition:opacity .4s var(--ease);
+  }
+  .gallery-grid .g-item:hover::before{opacity:1;}
+  .gallery-grid .g-item:hover .ph{transform:scale(1.04);}
+  .gallery-grid .g-item .ph{transition:transform .5s var(--ease);}
+
+  .g-item.tall{grid-row:span 2;}
+  .g-item.wide{grid-column:span 2;}
+
+  @media (max-width:900px){
+    .gallery-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:150px;}
+    .g-item.wide{grid-column:span 2;}
+  }
+  @media (max-width:560px){
+    .gallery-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:120px;}
+  }
+
+  /* lightbox */
+  .lightbox{
+    position:fixed; inset:0;
+    background:rgba(20,10,7,.92);
+    z-index:1000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:40px;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox-inner{
+    max-width:640px;
+    width:100%;
+    aspect-ratio:4/3;
+    border-radius:20px;
+    overflow:hidden;
+  }
+  .lightbox-close{
+    position:absolute;
+    top:26px; right:30px;
+    width:44px; height:44px;
+    border-radius:50%;
+    background:rgba(255,255,255,.1);
+    color:var(--cream);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .lightbox-close:hover{background:rgba(255,255,255,.2);}
+
+  /* =========================================================
+     CARROSSEL "UM POUCO DO NOSSO MUNDO DOCE"
+     ========================================================= */
+  .carousel-wrap{
+    position:relative;
+  }
+  .carousel-track{
+    display:flex;
+    gap:22px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+    padding:8px 0 26px;
+    -webkit-overflow-scrolling:touch;
+  }
+  .carousel-track::-webkit-scrollbar{display:none;}
+  .carousel-track{scrollbar-width:none;}
+
+  .carousel-slide{
+    flex:0 0 auto;
+    width:64%;
+    max-width:560px;
+    aspect-ratio:4/3;
+    border-radius:var(--radius);
+    overflow:hidden;
+    scroll-snap-align:center;
+    position:relative;
+    cursor:pointer;
+    box-shadow:0 16px 34px -18px rgba(43,23,17,.35);
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease);
+  }
+  .carousel-slide img{width:100%; height:100%; object-fit:cover; display:block;}
+  .carousel-slide:hover{transform:translateY(-4px); box-shadow:0 22px 40px -16px rgba(43,23,17,.45);}
+  .carousel-slide .cs-caption{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    padding:16px 18px;
+    background:linear-gradient(0deg, rgba(20,10,7,.7), transparent);
+    color:var(--cream);
+    font-family:'Fraunces', serif;
+    font-size:1rem;
+  }
+
+  @media (max-width:760px){
+    .carousel-slide{width:82%;}
+  }
+
+  .carousel-nav{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:22px;
+    margin-top:8px;
+  }
+  .carousel-arrow{
+    width:46px; height:46px;
+    border-radius:50%;
+    background:var(--white);
+    box-shadow:0 8px 20px -10px rgba(43,23,17,.35);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--choc-dark);
+    transition:transform .3s var(--ease), background .3s var(--ease);
+    flex-shrink:0;
+  }
+  .carousel-arrow:hover{transform:scale(1.08); background:var(--gold-light);}
+  .carousel-arrow svg{width:20px;height:20px;}
+
+  .carousel-dots{
+    display:flex;
+    gap:8px;
+    align-items:center;
+  }
+  .carousel-dot{
+    width:8px; height:8px;
+    border-radius:50%;
+    background:rgba(74,36,24,.25);
+    transition:width .35s var(--ease), background .35s var(--ease);
+    cursor:pointer;
+  }
+  .carousel-dot.active{
+    width:22px;
+    border-radius:100px;
+    background:var(--gold);
+  }
+
+  /* =========================================================
+     POR QUE ESCOLHER
+     ========================================================= */
+  .features-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:28px;
+  }
+  @media (max-width:900px){.features-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.features-grid{grid-template-columns:1fr;}}
+
+  .feature{
+    background:var(--white);
+    border-radius:var(--radius);
+    padding:32px 26px;
+    text-align:left;
+    box-shadow:0 10px 26px -20px rgba(43,23,17,.25);
+    transition:transform .4s var(--ease);
+    border-top:4px solid var(--gold);
+  }
+  .feature:hover{transform:translateY(-6px);}
+  .feature:nth-child(1){border-top-color:var(--gold);}
+  .feature:nth-child(2){border-top-color:var(--rose-deep);}
+  .feature:nth-child(3){border-top-color:var(--gold-deep);}
+  .feature:nth-child(4){border-top-color:var(--wine);}
+  .feature-icon{
+    width:54px; height:54px;
+    border-radius:16px;
+    background:linear-gradient(135deg, var(--gold-light), var(--gold));
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:18px;
+    font-size:1.5rem;
+  }
+  .feature h3{font-size:1.08rem; margin-bottom:8px;}
+  .feature p{font-size:0.88rem; color:var(--ink-soft);}
+
+  /* =========================================================
+     ENCOMENDAS (CTA)
+     ========================================================= */
+  .cta-section{
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .cta-section::before{
+    content:'';
+    position:absolute;
+    top:-120px; left:50%;
+    transform:translateX(-50%);
+    width:600px; height:600px;
+    background:radial-gradient(circle, rgba(198,161,91,.16), transparent 65%);
+  }
+  .cta-section .eyebrow{justify-content:center;}
+  .cta-section h2{font-size:clamp(2.1rem,4.4vw,3.2rem); max-width:680px; margin:0 auto 18px;}
+  .cta-section p{color:#c9b3a1; max-width:480px; margin:0 auto 40px; font-size:1.05rem;}
+
+  /* =========================================================
+     INSTAGRAM
+     ========================================================= */
+  .insta-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-bottom:44px;
+  }
+  .insta-handle{
+    display:flex; align-items:center; gap:14px;
+  }
+  .insta-handle .brand-badge{width:56px;height:56px;font-size:1.3rem;}
+  .insta-handle strong{
+    display:block; font-family:'Fraunces',serif; font-size:1.15rem; color:var(--choc-dark);
+  }
+  .insta-handle span{font-size:0.88rem; color:var(--ink-soft);}
+
+  .insta-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:12px;
+  }
+  .insta-grid .g-item{aspect-ratio:1; border-radius:12px; overflow:hidden; cursor:default;}
+  @media (max-width:900px){.insta-grid{grid-template-columns:repeat(3,1fr);}}
+
+  /* =========================================================
+     LOCALIZAÇÃO
+     ========================================================= */
+  .loc-hero{
+    position:relative;
+    border-radius:var(--radius);
+    overflow:hidden;
+    min-height:560px;
+    box-shadow:var(--shadow-soft);
+    background:
+      radial-gradient(ellipse 700px 500px at 15% 15%, rgba(198,161,91,.35), transparent 60%),
+      linear-gradient(135deg, var(--choc) 0%, var(--choc-dark) 70%);
+  }
+  /* Camada de foto de fundo opcional — coloque um arquivo em img/location.jpg
+     (foto do bairro/orla) para ela aparecer automaticamente aqui.
+     Sem o arquivo, o gradiente acima continua funcionando sozinho. */
+  .loc-bg-photo{
+    position:absolute; inset:0;
+    background-image:url('img/location.jpg');
+    background-size:cover;
+    background-position:center;
+    opacity:.55;
+  }
+  .loc-hero::after{
+    content:'';
+    position:absolute; inset:0;
+    background:linear-gradient(100deg, rgba(43,23,17,.92) 0%, rgba(43,23,17,.55) 42%, rgba(43,23,17,.15) 68%);
+  }
+  .loc-content{
+    position:relative;
+    z-index:2;
+    padding:56px 50px 0;
+    max-width:520px;
+    color:var(--cream);
+  }
+  .loc-content .eyebrow{color:var(--gold-light);}
+  .loc-content h2{
+    color:var(--cream);
+    font-size:clamp(2rem, 3.6vw, 2.7rem);
+    margin-bottom:14px;
+  }
+  .loc-content p{
+    color:#e7d9cb;
+    font-size:1.02rem;
+    margin-bottom:26px;
+  }
+
+  .loc-photo{
+    position:absolute;
+    left:50px; bottom:132px;
+    z-index:3;
+    width:250px;
+    border-radius:16px;
+    overflow:hidden;
+    border:6px solid var(--cream);
+    box-shadow:0 20px 40px -14px rgba(20,10,7,.55);
+    transform:rotate(-4deg);
+    transition:transform .4s var(--ease);
+  }
+  .loc-photo:hover{transform:rotate(-1deg) scale(1.03);}
+  .loc-photo img{width:100%; height:100%; object-fit:cover; display:block; aspect-ratio:1/1;}
+
+  .loc-note{
+    position:absolute;
+    top:44px; right:44px;
+    z-index:3;
+    max-width:220px;
+    background:var(--cream);
+    border:2px dashed var(--gold);
+    border-radius:10px;
+    padding:18px 20px;
+    transform:rotate(3deg);
+    box-shadow:0 14px 30px -14px rgba(20,10,7,.4);
+  }
+  .loc-note p{
+    font-family:'Caveat', cursive;
+    font-size:1.25rem;
+    line-height:1.3;
+    color:var(--choc);
+    margin:0;
+  }
+
+  .loc-features{
+    position:relative;
+    z-index:3;
+    margin:0 24px;
+    transform:translateY(38px);
+    background:var(--white);
+    border-radius:18px;
+    box-shadow:0 20px 40px -16px rgba(43,23,17,.3);
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+  }
+  .loc-feature{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:8px;
+    padding:22px 14px;
+    border-left:1px solid rgba(74,36,24,.1);
+  }
+  .loc-feature:first-child{border-left:none;}
+  .loc-feature svg{width:26px; height:26px; color:var(--gold);}
+  .loc-feature span{font-size:0.85rem; font-weight:500; color:var(--ink);}
+
+  @media (max-width:900px){
+    .loc-hero{min-height:auto; padding-bottom:40px;}
+    .loc-content{padding:44px 26px 0; max-width:100%;}
+    .loc-photo{display:none;}
+    .loc-note{position:static; margin:22px 26px 0; transform:rotate(-1deg); max-width:none;}
+    .loc-features{
+      margin:0 16px;
+      transform:translateY(28px);
+      grid-template-columns:repeat(2, 1fr);
+    }
+    .loc-feature{border-left:none; padding:18px 10px;}
+    .loc-feature:nth-child(odd){border-right:1px solid rgba(74,36,24,.1);}
+    .loc-feature:nth-child(1), .loc-feature:nth-child(2){border-bottom:1px solid rgba(74,36,24,.1);}
+  }
+  #contato{padding-bottom:150px;}
+  @media (max-width:900px){#contato{padding-bottom:120px;}}
+
+  /* =========================================================
+     FOOTER
+     ========================================================= */
+  footer{
+    background:var(--choc-dark);
+    color:#c9b3a1;
+    padding:70px 0 30px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    gap:50px;
+    padding-bottom:44px;
+    border-bottom:1px solid rgba(248,241,231,.12);
+  }
+  .footer-brand .brand-name{color:var(--cream);}
+  .footer-brand p.tag{
+    font-family:'Caveat',cursive;
+    font-size:1.3rem;
+    color:var(--gold);
+    margin-top:12px;
+  }
+  .footer-brand p.addr{
+    font-size:0.88rem;
+    margin-top:14px;
+    color:#a68c78;
+  }
+  footer h4{
+    color:var(--cream);
+    font-size:0.95rem;
+    margin-bottom:18px;
+    font-family:'Work Sans',sans-serif;
+    font-weight:600;
+    letter-spacing:0.02em;
+  }
+  footer ul li{margin-bottom:11px;}
+  footer ul li a{font-size:0.9rem; color:#c9b3a1; transition:color .3s;}
+  footer ul li a:hover{color:var(--gold-light);}
+  .footer-bottom{
+    padding-top:26px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+    font-size:0.82rem;
+    color:#8a7161;
+  }
+  @media (max-width:760px){
+    .footer-grid{grid-template-columns:1fr; gap:36px;}
+  }
+
+  /* =========================================================
+     WHATSAPP FLUTUANTE
+     ========================================================= */
+  .wa-float{
+    position:fixed;
+    bottom:26px; right:26px;
+    width:60px; height:60px;
+    border-radius:50%;
+    background:#25D366;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 14px 30px -10px rgba(37,211,102,.6);
+    z-index:200;
+    transition:transform .35s var(--ease);
+    animation:wa-pulse 2.6s ease-in-out infinite;
+  }
+  .wa-float:hover{transform:scale(1.08);}
+  .wa-float svg{width:30px;height:30px;fill:#fff;}
+  @keyframes wa-pulse{
+    0%,100%{box-shadow:0 14px 30px -10px rgba(37,211,102,.6);}
+    50%{box-shadow:0 14px 34px -6px rgba(37,211,102,.85), 0 0 0 8px rgba(37,211,102,.12);}
+  }
+  @media (prefers-reduced-motion: reduce){.wa-float{animation:none;}}
+</style>
+</head>
+<body>
+
+<!-- =================== HEADER =================== -->
+<header class="site-header" id="siteHeader">
+  <div class="container">
+    <a href="#topo" class="brand">
+      <span class="brand-badge"><img src="img/logo_mr.png" alt="Logotipo MR Sonho Doce"></span>
+      <span class="brand-name">MR Sonho Doce<span>confeitaria artesanal</span></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#topo">Início</a>
+      <a href="#sobre">Sobre nós</a>
+      <a href="#doces">Nossos doces</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#instagram">Instagram</a>
+      <a href="#contato">Contato</a>
+      <a href="#" class="btn btn-primary" data-wa data-wa-msg="Olá! Vim pelo site e gostaria de fazer um pedido 🍫">Fazer pedido</a>
+    </nav>
+
+    <div class="header-cta">
+      <a href="#" class="btn btn-primary" data-wa data-wa-msg="Olá! Vim pelo site e gostaria de fazer um pedido 🍫">Quero fazer um pedido</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- =================== HERO =================== -->
+<section class="hero" id="topo">
+  <div class="container">
+    <div class="hero-copy reveal">
+      <p class="hero-eyebrow">
+        Ilha do Governador — RJ
+      </p>
+      <h1>O sabor que encanta<br><em>seus sonhos</em> ❤️</h1>
+      <p class="lead">Confeitaria artesanal feita com carinho para transformar momentos especiais em doces memórias.</p>
+
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary" data-wa data-wa-msg="Olá! Vim pelo site e gostaria de fazer um pedido 🍫">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .9.9-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.7.9-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.1.1-.3.1-.4 0-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.4c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9 0 1.1.8 2.2.9 2.3.1.2 1.6 2.5 4 3.4.6.2 1 .4 1.3.5.6.2 1.1.1 1.5.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.1-.4-.2Z"/></svg>
+          Quero fazer um pedido
+        </a>
+        <a href="#doces" class="btn btn-ghost">Ver nossos doces</a>
+      </div>
+
+      <div class="hero-stats">
+        <div><strong>100%</strong><span>Artesanal</span></div>
+        <div><strong>Feito à mão</strong><span>Do início ao fim</span></div>
+        <div><strong>❤️</strong><span>Com amor, sempre</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="hero-frame">
+        <img class="photo-fill" src="img/hero.jpg" alt="Caixa personalizada de princesas MR Sonho Doce">
+      </div>
+      <div class="hero-badge-float">
+        <span class="brand-badge"><img src="img/logo_mr.png" alt="Logotipo MR Sonho Doce"></span>
+        <p><b>Sonho Doce</b>Cada doce, um mimo feito à mão</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SOBRE =================== -->
+<section id="sobre" class="about">
+  <div class="container">
+    <div class="about-visual reveal">
+      <img class="photo-fill" src="img/about.jpg" alt="Caixas de doces artesanais MR Sonho Doce">
+    </div>
+    <div class="about-text reveal">
+      <p class="eyebrow">
+        Sobre nós
+      </p>
+      <h2 class="section-title">Um sonho em forma de doce</h2>
+      <p>Na MR Sonho Doce, cada doce é preparado artesanalmente com muito carinho, cuidado e atenção aos detalhes. Nosso objetivo é deixar cada momento ainda mais especial através de sabores que encantam e apresentações que apaixonam.</p>
+      <p class="about-quote">"Feito devagar, com carinho, para durar na memória."</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================== NOSSOS DOCES =================== -->
+<section id="doces">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow" style="justify-content:center">
+        Nossos doces
+      </p>
+      <h2 class="section-title">Feitos para adoçar cada momento</h2>
+      <p class="section-sub">Conheça as categorias da MR Sonho Doce. Fale com a gente para saber sabores disponíveis e valores.</p>
+    </div>
+
+    <div class="products-grid reveal-stagger">
+      <!-- Card 1 -->
+      <article class="card reveal" style="--i:0">
+        <div class="card-media">
+          <img class="photo-fill" src="img/card_brigadeiros.jpg" alt="Brigadeiros tradicionais MR Sonho Doce">
+          <span class="card-ribbon">Clássico</span>
+        </div>
+        <div class="card-body">
+          <h3>Brigadeiros</h3>
+          <p>O clássico que nunca sai de moda, feito artesanalmente com ingredientes selecionados.</p>
+          <a href="#" class="btn btn-ghost btn-sm" data-wa data-wa-msg="Olá! Tenho interesse nos Brigadeiros 🍫">Tenho interesse</a>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card reveal" style="--i:1">
+        <div class="card-media">
+          <img class="photo-fill" src="img/card_gourmet.jpg" alt="Docinhos gourmet com coco e nozes MR Sonho Doce">
+        </div>
+        <div class="card-body">
+          <h3>Docinhos gourmet</h3>
+          <p>Sabores especiais e combinações sofisticadas para quem ama uma experiência única.</p>
+          <a href="#" class="btn btn-ghost btn-sm" data-wa data-wa-msg="Olá! Tenho interesse nos Docinhos gourmet 🍫">Tenho interesse</a>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card reveal" style="--i:2">
+        <div class="card-media">
+          <img class="photo-fill" src="img/card_kits.jpg" alt="Kit de caixas com doces MR Sonho Doce">
+          <span class="card-ribbon rose">Presente perfeito</span>
+        </div>
+        <div class="card-body">
+          <h3>Kits e caixas</h3>
+          <p>Montagens especiais para presentear ou compartilhar em ocasiões especiais.</p>
+          <a href="#" class="btn btn-ghost btn-sm" data-wa data-wa-msg="Olá! Tenho interesse nos Kits e caixas 🍫">Tenho interesse</a>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="card reveal" style="--i:3">
+        <div class="card-media">
+          <img class="photo-fill" src="img/card_personalizados.jpg" alt="Pirulitos personalizados de aniversário MR Sonho Doce">
+          <span class="card-ribbon">Sob medida</span>
+        </div>
+        <div class="card-body">
+          <h3>Doces personalizados</h3>
+          <p>Cores, temas e detalhes pensados especialmente para a sua festa ou comemoração.</p>
+          <a href="#" class="btn btn-ghost btn-sm" data-wa data-wa-msg="Olá! Tenho interesse nos Doces personalizados 🍫">Tenho interesse</a>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="card reveal" style="--i:4">
+        <div class="card-media">
+          <img class="photo-fill" src="img/card_lembrancinhas.jpg" alt="Sacolinhas personalizadas de Páscoa MR Sonho Doce">
+        </div>
+        <div class="card-body">
+          <h3>Lembrancinhas</h3>
+          <p>Mimos delicados para agradecer e presentear seus convidados com muito carinho.</p>
+          <a href="#" class="btn btn-ghost btn-sm" data-wa data-wa-msg="Olá! Tenho interesse nas Lembrancinhas 🍫">Tenho interesse</a>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="card reveal" style="--i:5">
+        <div class="card-media">
+          <img class="photo-fill" src="img/card_bolos.jpg" alt="Sonho recheado com doce de leite e chocolate MR Sonho Doce">
+        </div>
+        <div class="card-body">
+          <h3>Bolos e sobremesas</h3>
+          <p>Criações para fechar com chave de ouro qualquer celebração, do jeitinho MR Sonho Doce.</p>
+          <a href="#" class="btn btn-ghost btn-sm" data-wa data-wa-msg="Olá! Tenho interesse nos Bolos e sobremesas 🍫">Tenho interesse</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =================== GALERIA =================== -->
+<section id="galeria" class="dark-section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow" style="justify-content:center">
+        Galeria
+      </p>
+      <h2 class="section-title">Feito para encantar</h2>
+      <p class="section-sub">Um mosaico da variedade MR Sonho Doce — clique em qualquer foto para ver em detalhe.</p>
+    </div>
+
+    <div class="gallery-grid reveal">
+      <div class="g-item tall" data-caption="Brigadeiros" data-img="img/gal_1_tall.jpg"><img class="photo-fill" src="img/gal_1_tall.jpg" alt="Brigadeiros tradicionais MR Sonho Doce"></div>
+      <div class="g-item wide" data-caption="Doces de Páscoa" data-img="img/gal_2_wide.jpg"><img class="photo-fill" src="img/gal_2_wide.jpg" alt="Docinhos de Páscoa MR Sonho Doce"></div>
+      <div class="g-item" data-caption="Ovo de Páscoa" data-img="img/gal_3.jpg"><img class="photo-fill" src="img/gal_3.jpg" alt="Ovo de Páscoa artesanal embrulhado MR Sonho Doce"></div>
+      <div class="g-item" data-caption="Doces personalizados" data-img="img/gal_4.jpg"><img class="photo-fill" src="img/gal_4.jpg" alt="Cupcake personalizado MR Sonho Doce"></div>
+      <div class="g-item wide" data-caption="Lembrancinhas" data-img="img/gal_5_wide.jpg"><img class="photo-fill" src="img/gal_5_wide.jpg" alt="Pirulitos personalizados de festa MR Sonho Doce"></div>
+      <div class="g-item" data-caption="Kits especiais" data-img="img/gal_6.jpg"><img class="photo-fill" src="img/gal_6.jpg" alt="Docinhos dourados embalados MR Sonho Doce"></div>
+      <div class="g-item" data-caption="Rocambole de chocolate" data-img="img/gal_7.jpg"><img class="photo-fill" src="img/gal_7.jpg" alt="Rocambole de chocolate MR Sonho Doce"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Fechar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+  </button>
+  <div class="lightbox-inner" id="lightboxInner"></div>
+</div>
+
+<!-- =================== CARROSSEL "MUNDO DOCE" =================== -->
+<section id="mundo-doce">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow" style="justify-content:center">Um pouquinho de tudo</p>
+      <h2 class="section-title">Um pouco do nosso mundo doce ✨</h2>
+      <p class="section-sub">Arraste para o lado ou use as setas para conhecer mais dos nossos doces.</p>
+    </div>
+
+    <div class="carousel-wrap reveal">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide" data-caption="Brigadeiros" data-img="img/gal_1_tall.jpg">
+          <img src="img/gal_1_tall.jpg" alt="Brigadeiros tradicionais MR Sonho Doce" loading="lazy">
+          <span class="cs-caption">Brigadeiros</span>
+        </div>
+        <div class="carousel-slide" data-caption="Doces de Páscoa" data-img="img/gal_2_wide.jpg">
+          <img src="img/gal_2_wide.jpg" alt="Docinhos de Páscoa MR Sonho Doce" loading="lazy">
+          <span class="cs-caption">Docinhos de Páscoa</span>
+        </div>
+        <div class="carousel-slide" data-caption="Ovo de Páscoa" data-img="img/gal_3.jpg">
+          <img src="img/gal_3.jpg" alt="Ovo de Páscoa artesanal embrulhado MR Sonho Doce" loading="lazy">
+          <span class="cs-caption">Ovo de Páscoa artesanal</span>
+        </div>
+        <div class="carousel-slide" data-caption="Doces personalizados" data-img="img/gal_4.jpg">
+          <img src="img/gal_4.jpg" alt="Cupcake personalizado MR Sonho Doce" loading="lazy">
+          <span class="cs-caption">Doces personalizados</span>
+        </div>
+        <div class="carousel-slide" data-caption="Lembrancinhas" data-img="img/gal_5_wide.jpg">
+          <img src="img/gal_5_wide.jpg" alt="Pirulitos personalizados de festa MR Sonho Doce" loading="lazy">
+          <span class="cs-caption">Lembrancinhas de festa</span>
+        </div>
+        <div class="carousel-slide" data-caption="Kits especiais" data-img="img/gal_6.jpg">
+          <img src="img/gal_6.jpg" alt="Docinhos dourados embalados MR Sonho Doce" loading="lazy">
+          <span class="cs-caption">Kits especiais</span>
+        </div>
+        <div class="carousel-slide" data-caption="Rocambole de chocolate" data-img="img/gal_7.jpg">
+          <img src="img/gal_7.jpg" alt="Rocambole de chocolate MR Sonho Doce" loading="lazy">
+          <span class="cs-caption">Rocambole de chocolate</span>
+        </div>
+        <div class="carousel-slide" data-caption="Caixa de frutas com chocolate" data-img="img/gal_8.jpg">
+          <img src="img/gal_8.jpg" alt="Caixa de frutas com chocolate MR Sonho Doce" loading="lazy">
+          <span class="cs-caption">Caixa de frutas com chocolate</span>
+        </div>
+      </div>
+
+      <div class="carousel-nav">
+        <button class="carousel-arrow" id="carouselPrev" aria-label="Anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <button class="carousel-arrow" id="carouselNext" aria-label="Próxima">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== POR QUE ESCOLHER =================== -->
+<section id="porque">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow" style="justify-content:center">
+        Por que escolher a MR Sonho Doce?
+      </p>
+      <h2 class="section-title">Doces com propósito, do primeiro ao último detalhe</h2>
+    </div>
+
+    <div class="features-grid reveal-stagger">
+      <div class="feature reveal" style="--i:0">
+        <div class="feature-icon">🍫</div>
+        <h3>Produção artesanal</h3>
+        <p>Feitos com carinho e atenção em cada detalhe.</p>
+      </div>
+      <div class="feature reveal" style="--i:1">
+        <div class="feature-icon">❤️</div>
+        <h3>Feitos com amor</h3>
+        <p>Cada pedido é preparado pensando no seu momento especial.</p>
+      </div>
+      <div class="feature reveal" style="--i:2">
+        <div class="feature-icon">✨</div>
+        <h3>Apresentação impecável</h3>
+        <p>Doces bonitos por fora e deliciosos por dentro.</p>
+      </div>
+      <div class="feature reveal" style="--i:3">
+        <div class="feature-icon">🎁</div>
+        <h3>Para todos os momentos</h3>
+        <p>Perfeitos para festas, presentes, comemorações e lembranças.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== ENCOMENDAS (CTA) =================== -->
+<section class="cta-section dark-section">
+  <div class="container reveal">
+    <p class="eyebrow">
+      Encomendas
+    </p>
+    <h2>Vai comemorar? Deixa o doce com a gente!</h2>
+    <p>Faça sua encomenda e leve o sabor da MR Sonho Doce para o seu momento especial.</p>
+    <a href="#" class="btn btn-primary" data-wa data-wa-msg="Olá! Gostaria de fazer uma encomenda com a MR Sonho Doce 🍫">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .9.9-2.9-.2-.3A8 8 0 1 1 12 20Z"/></svg>
+      Fazer minha encomenda
+    </a>
+  </div>
+</section>
+
+<!-- =================== INSTAGRAM =================== -->
+<section id="instagram">
+  <div class="container">
+    <div class="insta-head reveal">
+      <div class="insta-handle">
+        <span class="brand-badge"><img src="img/logo_mr.png" alt="Logotipo MR Sonho Doce"></span>
+        <div>
+          <strong>@mr.sonho_doce</strong>
+          <span>Mais doces e novidades no Instagram</span>
+        </div>
+      </div>
+      <a href="https://www.instagram.com/mr.sonho_doce" target="_blank" rel="noopener" class="btn btn-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+        Seguir no Instagram
+      </a>
+    </div>
+
+    <div class="insta-grid reveal">
+      <div class="g-item" data-caption="Brigadeiros brancos" data-img="img/insta_1.jpg"><img class="photo-fill" src="img/insta_1.jpg" alt="Brigadeiros MR Sonho Doce"></div>
+      <div class="g-item" data-caption="Caixa de frutas com chocolate" data-img="img/insta_2.jpg"><img class="photo-fill" src="img/insta_2.jpg" alt="Caixa de frutas com chocolate MR Sonho Doce"></div>
+      <div class="g-item" data-caption="Ninho de brigadeiro" data-img="img/insta_3.jpg"><img class="photo-fill" src="img/insta_3.jpg" alt="Ninho de brigadeiro com amendoim MR Sonho Doce"></div>
+      <div class="g-item" data-caption="Brigadeiros tradicionais" data-img="img/insta_4.jpg"><img class="photo-fill" src="img/insta_4.jpg" alt="Brigadeiros tradicionais MR Sonho Doce"></div>
+      <div class="g-item" data-caption="Sacolinhas de Páscoa" data-img="img/insta_5.jpg"><img class="photo-fill" src="img/insta_5.jpg" alt="Sacolinhas personalizadas MR Sonho Doce"></div>
+      <div class="g-item" data-caption="Docinhos gourmet" data-img="img/insta_6.jpg"><img class="photo-fill" src="img/insta_6.jpg" alt="Docinhos gourmet MR Sonho Doce"></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== LOCALIZAÇÃO =================== -->
+<section id="contato">
+  <div class="container reveal">
+    <div class="loc-hero">
+      <div class="loc-bg-photo"></div>
+
+      <div class="loc-content">
+        <p class="eyebrow">
+          <svg class="swirl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
+          Localização
+        </p>
+        <h2>Estamos na Ilha do Governador 📍</h2>
+        <p>Ilha do Governador — Rio de Janeiro / RJ</p>
+        <a href="#" class="btn btn-primary" data-wa data-wa-msg="Olá! Gostaria de falar com vocês sobre a MR Sonho Doce 🍫">Falar conosco</a>
+      </div>
+
+      <div class="loc-photo">
+        <img src="img/card_brigadeiros.jpg" alt="Brigadeiros artesanais MR Sonho Doce">
+      </div>
+
+      <div class="loc-note">
+        <p>Feito com amor, do nosso cantinho para toda a Ilha do Gov! ❤️</p>
+      </div>
+
+      <div class="loc-features">
+        <div class="loc-feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z" stroke-linejoin="round"/></svg>
+          <span>Feito com amor e carinho</span>
+        </div>
+        <div class="loc-feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="19" r="2"/><circle cx="17" cy="19" r="2"/><path d="M2 4h2l1.6 9.4A2 2 0 0 0 7.6 15H16M8 4h9l3 6h-6M2 9h5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Entrega para toda a Ilha do Gov</span>
+        </div>
+        <div class="loc-feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2Z"/><path d="M8.5 8.8c.1-.8.6-1 1-1h.6c.3 0 .5.1.6.4l.6 1.6c.1.3 0 .5-.1.7l-.5.6c-.1.2-.1.3 0 .5.4.7 1.4 1.7 2.1 2.1.2.1.3.1.5 0l.6-.5c.2-.1.4-.2.7-.1l1.6.6c.3.1.4.3.4.6v.6c0 .4-.2.9-1 1-1 .1-2.4-.2-3.8-1.6s-1.7-2.8-1.6-3.8Z" stroke-linejoin="round"/></svg>
+          <span>Atendimento pelo WhatsApp</span>
+        </div>
+        <div class="loc-feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 11h16a1 1 0 0 1 1 1 8 8 0 0 1-8 8H11a8 8 0 0 1-8-8 1 1 0 0 1 1-1Z"/><path d="M12 11c0-3 1-4 1-5.5S12 3 12 3s-1 1-1 2.5S13 8 13 11" stroke-linecap="round"/></svg>
+          <span>Produtos frescos e artesanais</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <span class="brand-badge"><img src="img/logo_mr.png" alt="Logotipo MR Sonho Doce"></span>
+          <span class="brand-name">MR Sonho Doce</span>
+        </div>
+        <p class="tag">"O sabor que encanta seus sonhos! ❤️"</p>
+        <p class="addr">Ilha do Governador — RJ</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#topo">Início</a></li>
+          <li><a href="#sobre">Sobre nós</a></li>
+          <li><a href="#doces">Nossos doces</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#instagram">Instagram</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Fale com a gente</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/mr.sonho_doce" target="_blank" rel="noopener">@mr.sonho_doce</a></li>
+          <li><a href="#" data-wa data-wa-msg="Olá! Vim pelo site da MR Sonho Doce 🍫">Pedidos pelo WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> MR Sonho Doce. Todos os direitos reservados.</span>
+      <span>Feito com carinho para encantar sonhos.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- =================== WHATSAPP FLUTUANTE =================== -->
+<a href="#" class="wa-float" data-wa data-wa-msg="Olá! Vim pelo site e gostaria de fazer um pedido 🍫" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .9.9-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.7.9-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.1.1-.3.1-.4 0-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.4c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9 0 1.1.8 2.2.9 2.3.1.2 1.6 2.5 4 3.4.6.2 1 .4 1.3.5.6.2 1.1.1 1.5.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.1-.4-.2Z"/></svg>
+</a>
+
+<script>
+  // =========================================================
+  // CONFIGURAÇÃO — edite os dois valores abaixo quando tiver as
+  // informações reais. Todos os botões "data-wa" do site usam isso.
+  // =========================================================
+  const CONFIG = {
+    whatsappNumber: "5521900000000", // <-- troque pelo número real, formato DDI+DDD+numero, só dígitos
+    instagramUrl: "https://www.instagram.com/mr.sonho_doce"
+  };
+
+  function buildWaLink(message){
+    const text = encodeURIComponent(message || "Olá! Vim pelo site da MR Sonho Doce 🍫");
+    return `https://wa.me/${CONFIG.whatsappNumber}?text=${text}`;
+  }
+
+  document.querySelectorAll('[data-wa]').forEach(el=>{
+    el.setAttribute('href', buildWaLink(el.getAttribute('data-wa-msg')));
+    el.setAttribute('target', '_blank');
+    el.setAttribute('rel', 'noopener');
+  });
+
+  // header scroll state
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', ()=>{
+    header.classList.toggle('scrolled', window.scrollY > 30);
+  }, {passive:true});
+
+  // mobile menu
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', ()=>{
+    const open = navLinks.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=> {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', false);
+    });
+  });
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+
+  // lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxInner = document.getElementById('lightboxInner');
+  function openLightbox(src, caption){
+    if(src){
+      lightboxInner.innerHTML = `<img class="photo-fill" style="border-radius:20px;" src="${src}" alt="${caption}">`;
+    } else {
+      lightboxInner.innerHTML = `<div class="ph" style="border-radius:20px;"><small style="font-size:0.9rem">${caption}</small></div>`;
+    }
+    lightbox.classList.add('open');
+  }
+  document.querySelectorAll('.g-item').forEach(item=>{
+    item.addEventListener('click', ()=>{
+      openLightbox(item.getAttribute('data-img'), item.getAttribute('data-caption') || 'Foto');
+    });
+  });
+  document.getElementById('lightboxClose').addEventListener('click', ()=> lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', (e)=>{ if(e.target === lightbox) lightbox.classList.remove('open'); });
+  window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') lightbox.classList.remove('open'); });
+
+  // carrossel "Um pouco do nosso mundo doce"
+  (function(){
+    const track = document.getElementById('carouselTrack');
+    const dotsWrap = document.getElementById('carouselDots');
+    if(!track) return;
+    const slides = Array.from(track.children);
+
+    // clique na foto abre lightbox
+    slides.forEach(slide=>{
+      slide.addEventListener('click', ()=>{
+        openLightbox(slide.getAttribute('data-img'), slide.getAttribute('data-caption') || 'Foto');
+      });
+    });
+
+    // indicadores (dots)
+    slides.forEach((_, i)=>{
+      const dot = document.createElement('span');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', ()=> scrollToSlide(i));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    function closestSlideIndex(){
+      const trackCenter = track.scrollLeft + track.clientWidth / 2;
+      let best = 0, bestDist = Infinity;
+      slides.forEach((s, i)=>{
+        const dist = Math.abs((s.offsetLeft + s.clientWidth / 2) - trackCenter);
+        if(dist < bestDist){ bestDist = dist; best = i; }
+      });
+      return best;
+    }
+
+    function updateDots(){
+      const idx = closestSlideIndex();
+      dots.forEach((d, i)=> d.classList.toggle('active', i === idx));
+    }
+
+    function scrollToSlide(i){
+      const s = slides[i];
+      track.scrollTo({ left: s.offsetLeft - (track.clientWidth - s.clientWidth) / 2, behavior:'smooth' });
+    }
+
+    document.getElementById('carouselPrev').addEventListener('click', ()=>{
+      scrollToSlide(Math.max(0, closestSlideIndex() - 1));
+    });
+    document.getElementById('carouselNext').addEventListener('click', ()=>{
+      scrollToSlide(Math.min(slides.length - 1, closestSlideIndex() + 1));
+    });
+
+    let scrollTimer;
+    track.addEventListener('scroll', ()=>{
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(updateDots, 80);
+    }, {passive:true});
+
+    // autoplay opcional, pausa quando o usuário interage
+    let autoplay = setInterval(()=>{
+      const next = (closestSlideIndex() + 1) % slides.length;
+      scrollToSlide(next);
+    }, 4200);
+    function pauseAutoplay(){
+      clearInterval(autoplay);
+      autoplay = null;
+    }
+    track.addEventListener('pointerdown', pauseAutoplay, {once:true});
+    document.getElementById('carouselPrev').addEventListener('click', pauseAutoplay);
+    document.getElementById('carouselNext').addEventListener('click', pauseAutoplay);
+  })();
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
