@@ -22,23 +22,23 @@
 
 <style>
   :root{
-    --choc:#4A2418;
-    --choc-dark:#2B1711;
-    --cream:#F8F1E7;
-    --beige:#E8D4BC;
+    --choc:#2E3238;
+    --choc-dark:#1C1E22;
+    --cream:#F3F1EE;
+    --beige:#E4E1DC;
     --gold:#C6A15B;
     --gold-light:#DEC08A;
     --gold-deep:#9C7A3F;
-    --rose:#D9A0A0;
-    --rose-deep:#B96B6B;
-    --wine:#6E2A34;
+    --rose:#9BA0A8;
+    --rose-deep:#6B707A;
+    --wine:#3A3D42;
     --white:#FFFFFF;
-    --ink:#3A2317;
-    --ink-soft:#6b5142;
+    --ink:#24262A;
+    --ink-soft:#5C6068;
     --radius:22px;
     --radius-sm:12px;
-    --shadow-soft:0 18px 40px -20px rgba(43,23,17,0.35);
-    --shadow-hover:0 24px 50px -18px rgba(43,23,17,0.45);
+    --shadow-soft:0 18px 40px -20px rgba(28,30,34,0.35);
+    --shadow-hover:0 24px 50px -18px rgba(28,30,34,0.45);
     --ease:cubic-bezier(.22,.61,.36,1);
   }
 
@@ -50,7 +50,7 @@
     background-image:
       radial-gradient(circle, rgba(198,161,91,.5) 1.6px, transparent 1.8px),
       radial-gradient(circle, rgba(110,42,52,.35) 1.4px, transparent 1.6px),
-      radial-gradient(circle, rgba(74,36,24,.3) 1.4px, transparent 1.6px);
+      radial-gradient(circle, rgba(46,50,56,.3) 1.4px, transparent 1.6px);
     background-size: 90px 90px, 130px 130px, 70px 70px;
     background-position: 0 0, 30px 60px, 60px 10px;
   }
@@ -222,7 +222,7 @@
     background:rgba(248,241,231,0.92);
     backdrop-filter:blur(10px);
     padding:12px 0;
-    box-shadow:0 8px 24px -12px rgba(43,23,17,.18);
+    box-shadow:0 8px 24px -12px rgba(28,30,34,.18);
   }
 
   .brand{
@@ -313,11 +313,11 @@
   .btn-ghost{
     background:transparent;
     color:var(--choc-dark);
-    border:1.5px solid rgba(74,36,24,.3);
+    border:1.5px solid rgba(46,50,56,.3);
   }
   .btn-ghost:hover{
     border-color:var(--choc-dark);
-    background:rgba(74,36,24,.05);
+    background:rgba(46,50,56,.05);
     transform:translateY(-2px);
   }
   .btn-ghost-light{
@@ -339,7 +339,7 @@
     border-radius:50%;
     align-items:center;
     justify-content:center;
-    background:rgba(74,36,24,.06);
+    background:rgba(46,50,56,.06);
   }
   .menu-toggle svg{width:20px;height:20px;}
 
@@ -357,7 +357,7 @@
       padding:40px;
       transform:translateX(100%);
       transition:transform .5s var(--ease);
-      box-shadow:-18px 0 40px -20px rgba(43,23,17,.35);
+      box-shadow:-18px 0 40px -20px rgba(28,30,34,.35);
     }
     .nav-links.open{transform:translateX(0);}
     .nav-links a{font-size:1.15rem;}
@@ -374,7 +374,7 @@
     overflow:hidden;
     background:
       radial-gradient(ellipse 900px 500px at 82% -8%, rgba(198,161,91,.22), transparent 60%),
-      radial-gradient(ellipse 700px 500px at -8% 20%, rgba(74,36,24,.08), transparent 60%),
+      radial-gradient(ellipse 700px 500px at -8% 20%, rgba(46,50,56,.08), transparent 60%),
       var(--cream);
   }
   .hero .container{
@@ -445,7 +445,7 @@
     background:var(--cream);
     border-radius:20px;
     padding:18px 22px;
-    box-shadow:0 20px 40px -18px rgba(43,23,17,.4);
+    box-shadow:0 20px 40px -18px rgba(28,30,34,.4);
     display:flex;
     align-items:center;
     gap:12px;
@@ -488,10 +488,10 @@
     background:
       radial-gradient(circle at 30% 20%, rgba(198,161,91,.18), transparent 55%),
       linear-gradient(150deg, var(--beige) 0%, #d9c1a0 100%);
-    border-color:rgba(74,36,24,.25);
+    border-color:rgba(46,50,56,.25);
     color:var(--choc);
   }
-  .ph.light small{color:rgba(74,36,24,.55);}
+  .ph.light small{color:rgba(46,50,56,.55);}
 
   /* real photos */
   .photo-fill{
@@ -563,7 +563,7 @@
     background:var(--white);
     border-radius:var(--radius);
     overflow:hidden;
-    box-shadow:0 10px 26px -18px rgba(43,23,17,.3);
+    box-shadow:0 10px 26px -18px rgba(28,30,34,.3);
     transition:transform .45s var(--ease), box-shadow .45s var(--ease);
     display:flex;
     flex-direction:column;
@@ -591,7 +591,7 @@
   .card-media::after{
     content:'';
     position:absolute; inset:0;
-    background:linear-gradient(180deg, transparent 60%, rgba(43,23,17,.32));
+    background:linear-gradient(180deg, transparent 60%, rgba(28,30,34,.32));
   }
   .card-ribbon{
     position:absolute;
@@ -605,7 +605,7 @@
     text-transform:uppercase;
     padding:6px 14px;
     border-radius:100px;
-    box-shadow:0 6px 14px -6px rgba(43,23,17,.4);
+    box-shadow:0 6px 14px -6px rgba(28,30,34,.4);
   }
   .card-ribbon.rose{background:linear-gradient(135deg, var(--rose), var(--rose-deep)); color:var(--white);}
   .card-body{
@@ -670,7 +670,7 @@
   /* lightbox */
   .lightbox{
     position:fixed; inset:0;
-    background:rgba(20,10,7,.92);
+    background:rgba(18,19,22,.92);
     z-index:1000;
     display:none;
     align-items:center;
@@ -724,16 +724,16 @@
     scroll-snap-align:center;
     position:relative;
     cursor:pointer;
-    box-shadow:0 16px 34px -18px rgba(43,23,17,.35);
+    box-shadow:0 16px 34px -18px rgba(28,30,34,.35);
     transition:transform .35s var(--ease), box-shadow .35s var(--ease);
   }
   .carousel-slide img{width:100%; height:100%; object-fit:cover; display:block;}
-  .carousel-slide:hover{transform:translateY(-4px); box-shadow:0 22px 40px -16px rgba(43,23,17,.45);}
+  .carousel-slide:hover{transform:translateY(-4px); box-shadow:0 22px 40px -16px rgba(28,30,34,.45);}
   .carousel-slide .cs-caption{
     position:absolute;
     left:0; right:0; bottom:0;
     padding:16px 18px;
-    background:linear-gradient(0deg, rgba(20,10,7,.7), transparent);
+    background:linear-gradient(0deg, rgba(18,19,22,.7), transparent);
     color:var(--cream);
     font-family:'Fraunces', serif;
     font-size:1rem;
@@ -754,7 +754,7 @@
     width:46px; height:46px;
     border-radius:50%;
     background:var(--white);
-    box-shadow:0 8px 20px -10px rgba(43,23,17,.35);
+    box-shadow:0 8px 20px -10px rgba(28,30,34,.35);
     display:flex; align-items:center; justify-content:center;
     color:var(--choc-dark);
     transition:transform .3s var(--ease), background .3s var(--ease);
@@ -771,7 +771,7 @@
   .carousel-dot{
     width:8px; height:8px;
     border-radius:50%;
-    background:rgba(74,36,24,.25);
+    background:rgba(46,50,56,.25);
     transition:width .35s var(--ease), background .35s var(--ease);
     cursor:pointer;
   }
@@ -797,7 +797,7 @@
     border-radius:var(--radius);
     padding:32px 26px;
     text-align:left;
-    box-shadow:0 10px 26px -20px rgba(43,23,17,.25);
+    box-shadow:0 10px 26px -20px rgba(28,30,34,.25);
     transition:transform .4s var(--ease);
     border-top:4px solid var(--gold);
   }
@@ -891,7 +891,7 @@
   .loc-hero::after{
     content:'';
     position:absolute; inset:0;
-    background:linear-gradient(100deg, rgba(43,23,17,.92) 0%, rgba(43,23,17,.55) 42%, rgba(43,23,17,.15) 68%);
+    background:linear-gradient(100deg, rgba(28,30,34,.92) 0%, rgba(28,30,34,.55) 42%, rgba(28,30,34,.15) 68%);
   }
   .loc-content{
     position:relative;
@@ -920,7 +920,7 @@
     border-radius:16px;
     overflow:hidden;
     border:6px solid var(--cream);
-    box-shadow:0 20px 40px -14px rgba(20,10,7,.55);
+    box-shadow:0 20px 40px -14px rgba(18,19,22,.55);
     transform:rotate(-4deg);
     transition:transform .4s var(--ease);
   }
@@ -937,7 +937,7 @@
     border-radius:10px;
     padding:18px 20px;
     transform:rotate(3deg);
-    box-shadow:0 14px 30px -14px rgba(20,10,7,.4);
+    box-shadow:0 14px 30px -14px rgba(18,19,22,.4);
   }
   .loc-note p{
     font-family:'Caveat', cursive;
@@ -954,7 +954,7 @@
     transform:translateY(38px);
     background:var(--white);
     border-radius:18px;
-    box-shadow:0 20px 40px -16px rgba(43,23,17,.3);
+    box-shadow:0 20px 40px -16px rgba(28,30,34,.3);
     display:grid;
     grid-template-columns:repeat(4, 1fr);
   }
@@ -965,7 +965,7 @@
     text-align:center;
     gap:8px;
     padding:22px 14px;
-    border-left:1px solid rgba(74,36,24,.1);
+    border-left:1px solid rgba(46,50,56,.1);
   }
   .loc-feature:first-child{border-left:none;}
   .loc-feature svg{width:26px; height:26px; color:var(--gold);}
@@ -982,8 +982,8 @@
       grid-template-columns:repeat(2, 1fr);
     }
     .loc-feature{border-left:none; padding:18px 10px;}
-    .loc-feature:nth-child(odd){border-right:1px solid rgba(74,36,24,.1);}
-    .loc-feature:nth-child(1), .loc-feature:nth-child(2){border-bottom:1px solid rgba(74,36,24,.1);}
+    .loc-feature:nth-child(odd){border-right:1px solid rgba(46,50,56,.1);}
+    .loc-feature:nth-child(1), .loc-feature:nth-child(2){border-bottom:1px solid rgba(46,50,56,.1);}
   }
   #contato{padding-bottom:150px;}
   @media (max-width:900px){#contato{padding-bottom:120px;}}
@@ -1119,7 +1119,7 @@
 
     <div class="hero-visual reveal">
       <div class="hero-frame">
-        <img class="photo-fill" src="img/imagem.jpg" alt="(Seu produto aqui)">
+        <img class="photo-fill" src="img/imagem-01.jpg" alt="(Seu produto aqui)">
       </div>
       <div class="hero-badge-float">
         <span class="brand-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="width:55%;height:55%;color:var(--choc-dark)"><path d="M12 3v18M4 12h16" stroke-linecap="round"/><circle cx="12" cy="12" r="9"/></svg></span>
@@ -1133,7 +1133,7 @@
 <section id="sobre" class="about">
   <div class="container">
     <div class="about-visual reveal">
-      <img class="photo-fill" src="img/imagem.jpg" alt="(Seu produto aqui)">
+      <img class="photo-fill" src="img/imagem-02.jpg" alt="(Seu produto aqui)">
     </div>
     <div class="about-text reveal">
       <p class="eyebrow">
@@ -1161,7 +1161,7 @@
       <!-- Card 1 -->
       <article class="card reveal" style="--i:0">
         <div class="card-media">
-          <img class="photo-fill" src="img/imagem.jpg" alt="(Seu produto aqui)">
+          <img class="photo-fill" src="img/imagem-03.jpg" alt="(Seu produto aqui)">
           <span class="card-ribbon">Clássico</span>
         </div>
         <div class="card-body">
@@ -1174,7 +1174,7 @@
       <!-- Card 2 -->
       <article class="card reveal" style="--i:1">
         <div class="card-media">
-          <img class="photo-fill" src="img/imagem.jpg" alt="(Seu produto aqui)">
+          <img class="photo-fill" src="img/imagem-04.jpg" alt="(Seu produto aqui)">
         </div>
         <div class="card-body">
           <h3>(seu produto 2)</h3>
@@ -1186,7 +1186,7 @@
       <!-- Card 3 -->
       <article class="card reveal" style="--i:2">
         <div class="card-media">
-          <img class="photo-fill" src="img/imagem.jpg" alt="(Seu produto aqui)">
+          <img class="photo-fill" src="img/imagem-05.jpg" alt="(Seu produto aqui)">
           <span class="card-ribbon rose">Presente perfeito</span>
         </div>
         <div class="card-body">
@@ -1199,7 +1199,7 @@
       <!-- Card 4 -->
       <article class="card reveal" style="--i:3">
         <div class="card-media">
-          <img class="photo-fill" src="img/imagem.jpg" alt="(Seu produto aqui)">
+          <img class="photo-fill" src="img/imagem-06.jpg" alt="(Seu produto aqui)">
           <span class="card-ribbon">Sob medida</span>
         </div>
         <div class="card-body">
@@ -1212,7 +1212,7 @@
       <!-- Card 5 -->
       <article class="card reveal" style="--i:4">
         <div class="card-media">
-          <img class="photo-fill" src="img/imagem.jpg" alt="(Seu produto aqui)">
+          <img class="photo-fill" src="img/imagem-07.jpg" alt="(Seu produto aqui)">
         </div>
         <div class="card-body">
           <h3>(seu produto 5)</h3>
@@ -1224,7 +1224,7 @@
       <!-- Card 6 -->
       <article class="card reveal" style="--i:5">
         <div class="card-media">
-          <img class="photo-fill" src="img/imagem.jpg" alt="(Seu produto aqui)">
+          <img class="photo-fill" src="img/imagem-08.jpg" alt="(Seu produto aqui)">
         </div>
         <div class="card-body">
           <h3>(seu produto 6)</h3>
@@ -1248,13 +1248,13 @@
     </div>
 
     <div class="gallery-grid reveal">
-      <div class="g-item tall" data-caption="(Seu produto aqui)" data-img="img/imagem.jpg"><img class="photo-fill" src="img/imagem.jpg" alt="(Seu produto aqui)"></div>
-      <div class="g-item wide" data-caption="(Seu produto aqui)" data-img="img/imagem.jpg"><img class="photo-fill" src="img/imagem.jpg" alt="(Seu produto aqui)"></div>
-      <div class="g-item" data-caption="(Seu produto aqui)" data-img="img/imagem.jpg"><img class="photo-fill" src="img/imagem.jpg" alt="(Seu produto aqui)"></div>
-      <div class="g-item" data-caption="(Seu produto aqui)" data-img="img/imagem.jpg"><img class="photo-fill" src="img/imagem.jpg" alt="(Seu produto aqui)"></div>
-      <div class="g-item wide" data-caption="(Seu produto aqui)" data-img="img/imagem.jpg"><img class="photo-fill" src="img/imagem.jpg" alt="(Seu produto aqui)"></div>
-      <div class="g-item" data-caption="(Seu produto aqui)" data-img="img/imagem.jpg"><img class="photo-fill" src="img/imagem.jpg" alt="(Seu produto aqui)"></div>
-      <div class="g-item" data-caption="(Seu produto aqui)" data-img="img/imagem.jpg"><img class="photo-fill" src="img/imagem.jpg" alt="(Seu produto aqui)"></div>
+      <div class="g-item tall" data-caption="(Seu produto aqui)" data-img="img/imagem-09.jpg"><img class="photo-fill" src="img/imagem-09.jpg" alt="(Seu produto aqui)"></div>
+      <div class="g-item wide" data-caption="(Seu produto aqui)" data-img="img/imagem-10.jpg"><img class="photo-fill" src="img/imagem-10.jpg" alt="(Seu produto aqui)"></div>
+      <div class="g-item" data-caption="(Seu produto aqui)" data-img="img/imagem-11.jpg"><img class="photo-fill" src="img/imagem-11.jpg" alt="(Seu produto aqui)"></div>
+      <div class="g-item" data-caption="(Seu produto aqui)" data-img="img/imagem-12.jpg"><img class="photo-fill" src="img/imagem-12.jpg" alt="(Seu produto aqui)"></div>
+      <div class="g-item wide" data-caption="(Seu produto aqui)" data-img="img/imagem-13.jpg"><img class="photo-fill" src="img/imagem-13.jpg" alt="(Seu produto aqui)"></div>
+      <div class="g-item" data-caption="(Seu produto aqui)" data-img="img/imagem-14.jpg"><img class="photo-fill" src="img/imagem-14.jpg" alt="(Seu produto aqui)"></div>
+      <div class="g-item" data-caption="(Seu produto aqui)" data-img="img/imagem-15.jpg"><img class="photo-fill" src="img/imagem-15.jpg" alt="(Seu produto aqui)"></div>
     </div>
   </div>
 </section>
@@ -1278,36 +1278,36 @@
 
     <div class="carousel-wrap reveal">
       <div class="carousel-track" id="carouselTrack">
-        <div class="carousel-slide" data-caption="(Seu produto aqui)" data-img="img/imagem.jpg">
-          <img src="img/imagem.jpg" alt="(Seu produto aqui)" loading="lazy">
+        <div class="carousel-slide" data-caption="(Seu produto aqui)" data-img="img/imagem-09.jpg">
+          <img src="img/imagem-09.jpg" alt="(Seu produto aqui)" loading="lazy">
           <span class="cs-caption">(Seu produto aqui)</span>
         </div>
-        <div class="carousel-slide" data-caption="(Seu produto aqui)" data-img="img/imagem.jpg">
-          <img src="img/imagem.jpg" alt="(Seu produto aqui)" loading="lazy">
+        <div class="carousel-slide" data-caption="(Seu produto aqui)" data-img="img/imagem-10.jpg">
+          <img src="img/imagem-10.jpg" alt="(Seu produto aqui)" loading="lazy">
           <span class="cs-caption">(Seu produto aqui)</span>
         </div>
-        <div class="carousel-slide" data-caption="(Seu produto aqui)" data-img="img/imagem.jpg">
-          <img src="img/imagem.jpg" alt="(Seu produto aqui)" loading="lazy">
+        <div class="carousel-slide" data-caption="(Seu produto aqui)" data-img="img/imagem-11.jpg">
+          <img src="img/imagem-11.jpg" alt="(Seu produto aqui)" loading="lazy">
           <span class="cs-caption">(Seu produto aqui)</span>
         </div>
-        <div class="carousel-slide" data-caption="(Seu produto aqui)" data-img="img/imagem.jpg">
-          <img src="img/imagem.jpg" alt="(Seu produto aqui)" loading="lazy">
+        <div class="carousel-slide" data-caption="(Seu produto aqui)" data-img="img/imagem-12.jpg">
+          <img src="img/imagem-12.jpg" alt="(Seu produto aqui)" loading="lazy">
           <span class="cs-caption">(Seu produto aqui)</span>
         </div>
-        <div class="carousel-slide" data-caption="(Seu produto aqui)" data-img="img/imagem.jpg">
-          <img src="img/imagem.jpg" alt="(Seu produto aqui)" loading="lazy">
+        <div class="carousel-slide" data-caption="(Seu produto aqui)" data-img="img/imagem-13.jpg">
+          <img src="img/imagem-13.jpg" alt="(Seu produto aqui)" loading="lazy">
           <span class="cs-caption">(Seu produto aqui)</span>
         </div>
-        <div class="carousel-slide" data-caption="(Seu produto aqui)" data-img="img/imagem.jpg">
-          <img src="img/imagem.jpg" alt="(Seu produto aqui)" loading="lazy">
+        <div class="carousel-slide" data-caption="(Seu produto aqui)" data-img="img/imagem-14.jpg">
+          <img src="img/imagem-14.jpg" alt="(Seu produto aqui)" loading="lazy">
           <span class="cs-caption">(Seu produto aqui)</span>
         </div>
-        <div class="carousel-slide" data-caption="(Seu produto aqui)" data-img="img/imagem.jpg">
-          <img src="img/imagem.jpg" alt="(Seu produto aqui)" loading="lazy">
+        <div class="carousel-slide" data-caption="(Seu produto aqui)" data-img="img/imagem-15.jpg">
+          <img src="img/imagem-15.jpg" alt="(Seu produto aqui)" loading="lazy">
           <span class="cs-caption">(Seu produto aqui)</span>
         </div>
-        <div class="carousel-slide" data-caption="(Seu produto aqui)" data-img="img/imagem.jpg">
-          <img src="img/imagem.jpg" alt="(Seu produto aqui)" loading="lazy">
+        <div class="carousel-slide" data-caption="(Seu produto aqui)" data-img="img/imagem-16.jpg">
+          <img src="img/imagem-16.jpg" alt="(Seu produto aqui)" loading="lazy">
           <span class="cs-caption">(Seu produto aqui)</span>
         </div>
       </div>
@@ -1393,12 +1393,12 @@
     </div>
 
     <div class="insta-grid reveal">
-      <div class="g-item" data-caption="(Seu produto aqui)" data-img="img/imagem.jpg"><img class="photo-fill" src="img/imagem.jpg" alt="(Seu produto aqui)"></div>
-      <div class="g-item" data-caption="(Seu produto aqui)" data-img="img/imagem.jpg"><img class="photo-fill" src="img/imagem.jpg" alt="(Seu produto aqui)"></div>
-      <div class="g-item" data-caption="(Seu produto aqui)" data-img="img/imagem.jpg"><img class="photo-fill" src="img/imagem.jpg" alt="(Seu produto aqui)"></div>
-      <div class="g-item" data-caption="(Seu produto aqui)" data-img="img/imagem.jpg"><img class="photo-fill" src="img/imagem.jpg" alt="(Seu produto aqui)"></div>
-      <div class="g-item" data-caption="(Seu produto aqui)" data-img="img/imagem.jpg"><img class="photo-fill" src="img/imagem.jpg" alt="(Seu produto aqui)"></div>
-      <div class="g-item" data-caption="(Seu produto aqui)" data-img="img/imagem.jpg"><img class="photo-fill" src="img/imagem.jpg" alt="(Seu produto aqui)"></div>
+      <div class="g-item" data-caption="(Seu produto aqui)" data-img="img/imagem-17.jpg"><img class="photo-fill" src="img/imagem-17.jpg" alt="(Seu produto aqui)"></div>
+      <div class="g-item" data-caption="(Seu produto aqui)" data-img="img/imagem-18.jpg"><img class="photo-fill" src="img/imagem-18.jpg" alt="(Seu produto aqui)"></div>
+      <div class="g-item" data-caption="(Seu produto aqui)" data-img="img/imagem-19.jpg"><img class="photo-fill" src="img/imagem-19.jpg" alt="(Seu produto aqui)"></div>
+      <div class="g-item" data-caption="(Seu produto aqui)" data-img="img/imagem-20.jpg"><img class="photo-fill" src="img/imagem-20.jpg" alt="(Seu produto aqui)"></div>
+      <div class="g-item" data-caption="(Seu produto aqui)" data-img="img/imagem-21.jpg"><img class="photo-fill" src="img/imagem-21.jpg" alt="(Seu produto aqui)"></div>
+      <div class="g-item" data-caption="(Seu produto aqui)" data-img="img/imagem-22.jpg"><img class="photo-fill" src="img/imagem-22.jpg" alt="(Seu produto aqui)"></div>
     </div>
   </div>
 </section>
@@ -1420,7 +1420,7 @@
       </div>
 
       <div class="loc-photo">
-        <img src="img/imagem.jpg" alt="(Seu produto aqui)">
+        <img src="img/imagem-03.jpg" alt="(Seu produto aqui)">
       </div>
 
       <div class="loc-note">
